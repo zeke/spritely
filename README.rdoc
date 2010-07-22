@@ -19,7 +19,7 @@ Add these dependencies to environment.rb:
 
 Install the spritely plugin:
 
-  script/plugin install
+  script/plugin install git://github.com/zeke/spritely.git
   script/generate spritely
 
 == Usage
