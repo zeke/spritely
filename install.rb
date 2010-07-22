@@ -1,9 +1,12 @@
-plugins_dir = File.expand_path(".")
-spritely_dir = File.join(plugins_dir, 'spritely')
+require 'fileutils'
+
+spritely_dir = File.join(File.dirname(__FILE__))
 root_dir = File.join(spritely_dir, '..', '..', '..')
+compass_dir = File.join(root_dir, 'app', 'stylesheets')
 
-File.copy File.join(spritely_dir, '_spritely.sass'), File.join(root_dir, 'app', 'stylesheets', '_spritely.sass')
+FileUtils.mkdir_p compass_dir
+FileUtils.cp File.join(spritely_dir, '_spritely.sass'), File.join(compass_dir, '_spritely.sass')
 
-puts "\n\nSpritely!"
+puts "\nSpritely Installed!"
 puts "Created app/stylesheets/_spritely.sass"
 puts "Check out README.rdoc for usage instructions.\n\n"
