@@ -1,8 +1,8 @@
 plugins_dir = File.expand_path(".")
 spritely_dir = File.join(plugins_dir, 'spritely')
-root_dir = File.join(spritely, '..', '..', '..')
+root_dir = File.join(spritely_dir, '..', '..', '..')
 
-File.copy File.join(spritely, '_spritely.sass'), File.join(root_dir, 'app', 'stylesheets', '_spritely.sass')
+File.copy File.join(spritely_dir, '_spritely.sass'), File.join(root_dir, 'app', 'stylesheets', '_spritely.sass')
 
 puts "\n\nSpritely!"
 puts "Created app/stylesheets/_spritely.sass"
