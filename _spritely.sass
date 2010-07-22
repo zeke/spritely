@@ -1,0 +1,77 @@
+// CONFIG
+
+// Your sprites can vary in size, but each graphic must be allotted the same amount of x and y space
+// on your master image. For sprites that are smaller than the grid size, position them relative to
+// the top left corner of their grid 'cell'.
+$grid_size = 32px
+
+// Set $sprite_file location relative to public/images.
+// e.g. 'my_sprite.png' resolves to 'public/images/my_sprite.png'
+$sprite_file = "sprites.png"
+
+// WARNING! Don't mess with the styles below this line!
+
+a.spritely
+  outline: none
+  display: block
+  float: none
+  clear: both
+  overflow: hidden
+  padding: 0
+  &.labeled
+    text-indent: 0
+    width: auto
+  &.no_label
+    span
+      margin-left: 0 !important
+    div
+      display: none
+
+  // Sprite goes in here
+  span
+    display: block
+    float: left
+    overflow: hidden
+    
+  // Link label goes in here
+  div
+    display: block
+    float: left
+
+@mixin linky_sprite($offset, $image_size: $grid_size)
+  $bpx = $offset*-$grid_size
+  $bpy = -$grid_size
+  span
+    background: transparent image_url($sprite_file) no-repeat left top
+    background-position: $bpx $bpy
+    width: $image_size
+    height: $image_size
+    margin: 1px 5px 0 4px
+  &:hover, &.active
+    span
+      background-position: $bpx 0
+
+// Create a linky sprite that remains 'active' in appearance, hovered or not.
+@mixin active_linky_sprite($offset, $image_size: $grid_size)
+  @include linky_sprite($offset, $image_size)
+  $bpx = $offset*-$grid_size
+  span
+    background-position: $bpx 0 !important
+
+// Create a linky sprite that remains 'inactive' in appearance, even when hovered.
+@mixin inactive_linky_sprite($offset, $image_size: $grid_size)
+  @include linky_sprite($offset, $image_size)
+  $bpx = $offset*-$grid_size
+  $bpy = -$grid_size
+  span, span:hover, span.active
+    background-position: $bpx $bpy !important
+
+@mixin regular_sprite($offset, $image_size: $grid_size)
+  $bpx = $offset*-$grid_size
+  $bpy = -$grid_size
+  background: transparent image_url($sprite_file) no-repeat left top
+  background-position: $bpx $bpy
+  width: $image_size
+  height: $image_size
+  &:hover, &.active
+    background-position: $bpx 0
