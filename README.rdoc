@@ -49,7 +49,7 @@ Use the spritely view helpers:
 You don't actually have to use Compass in your app, but Spritely relies on Compass' 
 image_path method for doing dynamic string interpolation.
 
-The plugin assumes you're using Compass' default path for your sass files, +/app/stylesheets/+
+The plugin assumes you're using Compass' default path for your sass files, `/app/stylesheets/`
 
 == License
 
