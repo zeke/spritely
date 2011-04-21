@@ -5,22 +5,17 @@ applications using {Sass}[http://sass-lang.com/] and the {Compass CSS Framework}
 
 == Installation
 
-Install gem dependencies:
+Spritely is compatible with Rails 2, but these instructions cater to the Rails 3 crowd..
 
-  cd path/to/railsapp
-  sudo gem install haml compass
-  haml --rails .
-  compass init rails .
-    
-Add these dependencies to environment.rb:
+Add this to your Gemfile
 
-  config.gem 'haml'
-  config.gem 'compass'
+  gem 'haml'
+	gem 'compass'
 
 Install the spritely plugin:
 
-  script/plugin install git://github.com/zeke/spritely.git
-  script/generate spritely
+  rails plugin install git://github.com/zeke/spritely.git
+  rails generate spritely
 
 == Usage
 
@@ -53,4 +48,4 @@ The plugin assumes you're using Compass' default path for your sass files, <tt>/
 
 == License
 
-Copyright (c) 2010 Zeke Sikelianos, released under the MIT license
+Copyright (c) 2011 Zeke Sikelianos, released under the MIT license
