@@ -29,7 +29,7 @@ Open _spritely.sass and customize it to fit your needs:
   
 Import the spritely partial into your main sass file, then define your sprite styles:
 
-	@import spritely
+	@import "spritely"
 	.spritely  
 		&.add
 			@include linky_sprite(0) # This icon is at position 0 in the sprites.png (from the left)
