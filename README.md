@@ -1,13 +1,15 @@
-= Spritely
+Spritely
+========
 
-Spritely is a Ruby on Rails plugin that simplifies the process of using {CSS sprites}[http://www.alistapart.com/articles/sprites] in your 
-applications using {Sass}[http://sass-lang.com/] and the {Compass CSS Framework}[http://compass-style.org/].
+Spritely is a Ruby on Rails plugin that simplifies the process of using [CSS sprites](http://www.alistapart.com/articles/sprites) in your 
+applications using [Sass](http://sass-lang.com/) and the [Compass CSS Framework](http://compass-style.org/).
 
-== Installation
+Installation
+------------
 
 Spritely is compatible with Rails 2, but these instructions cater to the Rails 3 crowd..
 
-Add this to your Gemfile
+Add this to your Gemfile:
 
   gem 'haml'
 	gem 'compass'
@@ -17,7 +19,8 @@ Install the spritely plugin:
   rails plugin install git://github.com/zeke/spritely.git
   rails generate spritely
 
-== Usage
+Usage
+-----
 
 Open _spritely.sass and customize it to fit your needs:
 
@@ -39,13 +42,15 @@ Use the spritely view helpers:
 
   spritely_link_to_function("Toggle", "toggleSomeJazz()", :class => "toggle")
 
-== Notes
+Notes
+-----
 
 You don't actually have to use Compass in your app, but Spritely relies on Compass' 
 image_path method for doing dynamic string interpolation.
 
-The plugin assumes you're using Compass' default path for your sass files, <tt>/app/stylesheets/</tt>
+The plugin assumes you're using Compass' default path for your sass files, `/app/stylesheets/`
 
-== License
+License
+-------
 
 Copyright (c) 2011 Zeke Sikelianos, released under the MIT license
