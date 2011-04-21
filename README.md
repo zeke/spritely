@@ -11,8 +11,10 @@ Spritely is compatible with Rails 2, but these instructions cater to the Rails 3
 
 Add this to your Gemfile:
 
-	gem 'haml'
-	gem 'compass'
+``` ruby
+gem 'haml'
+gem 'compass'
+```
 
 Install the spritely plugin:
 
