@@ -11,36 +11,36 @@ Spritely is compatible with Rails 2, but these instructions cater to the Rails 3
 
 Add this to your Gemfile:
 
-  gem 'haml'
+	gem 'haml'
 	gem 'compass'
 
 Install the spritely plugin:
 
-  rails plugin install git://github.com/zeke/spritely.git
-  rails generate spritely
+	rails plugin install git://github.com/zeke/spritely.git
+	rails generate spritely
 
 Usage
 -----
 
 Open _spritely.sass and customize it to fit your needs:
 
-  $grid_size = 32px
-  $sprite_file = "sprites.png" # this path is relative to public/images/
+	$grid_size = 32px
+	$sprite_file = "sprites.png" # this path is relative to public/images/
   
 Import the spritely partial into your main sass file, then define your sprite styles:
 
-  @import spritely
-  .spritely  
-    &.add
-      @include linky_sprite(0) # This icon is at position 0 in the sprites.png (from the left)
-    &.toggle
-      @include linky_sprite(1, 16px) # This icon is at position 1, and it's smaller than the grid size.
+	@import spritely
+	.spritely  
+		&.add
+			@include linky_sprite(0) # This icon is at position 0 in the sprites.png (from the left)
+		&.toggle
+			@include linky_sprite(1, 16px) # This icon is at position 1, and it's smaller than the grid size.
       
 Use the spritely view helpers:
 
-  spritely_link_to("Add to Favorites", add_to_favorites_path, :class => "favorite")
+	spritely_link_to("Add to Favorites", add_to_favorites_path, :class => "favorite")
 
-  spritely_link_to_function("Toggle", "toggleSomeJazz()", :class => "toggle")
+	spritely_link_to_function("Toggle", "toggleSomeJazz()", :class => "toggle")
 
 Notes
 -----
